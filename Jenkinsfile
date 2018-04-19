@@ -15,16 +15,11 @@ pipeline {
         }
          stage ('Build') {
             steps {
-                sh '''cd TestMaven
+                sh '''
                 mvn -Dmaven.test.failure.ignore=true install
                 '''
             }
-            post {
-                success {
-                    sh 'echo $pwd'
-                    junit 'TestMaven/target/surefire-reports/TEST-udemy.AppTest.xml' 
-                }
-            }
+            
         }
        
          stage ('Artifactory configuration') {
