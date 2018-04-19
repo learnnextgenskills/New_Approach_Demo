@@ -26,7 +26,7 @@ pipeline {
           // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
             
              steps {
-                 sh ' mvn deploy '
+                 sh ' mvn deploy -DdeployOnly'
                   
              }
          }
