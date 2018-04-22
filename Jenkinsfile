@@ -41,7 +41,7 @@ pipeline {
                         branch = env.BRANCH_NAME
                     }
 
-                    withSonarQubeEnv("http://sonarqubenexttest.emea.roche.com") {
+                    withSonarQubeEnv("SONARQUBE") {
                         // Submit to sonar server
                         sh "${SONAR} -Dsonar.branch.name=${branch}"
                     }
