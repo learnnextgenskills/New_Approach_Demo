@@ -35,9 +35,9 @@ pipeline {
                             // Github plugin for PR's (does not submit to server)
                             sh """${SONAR} -Dsonar.analysis.mode=preview \
                                            -Dsonar.github.pullRequest=${env.CHANGE_ID} \
-                                           -Dsonar.github.repository=rsc/NSEmbedded \
-                                           -Dsonar.github.endpoint=http://ghe-rss.roche.com/api/v3 \
-                                           -Dsonar.github.oauth=${GITHUB_OAUTH_TOKEN}
+                                           -Dsonar.github.repository=New_Approach_Demo \
+                                           -Dsonar.github.endpoint=https://api.github.com \
+                                           
                             """
                         }
                     } else {
