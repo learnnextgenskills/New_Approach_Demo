@@ -28,7 +28,7 @@ pipeline {
                         // Running from a PR
                         branch = env.CHANGE_BRANCH
 
-                        withSonarQubeEnv("http://192.168.33.10:9000") {
+                        withSonarQubeEnv("SONARQUBE") {
                             // Github plugin for PR's (does not submit to server)
                             sh """${SONAR} -Dsonar.analysis.mode=preview \
                                            -Dsonar.github.pullRequest=${env.CHANGE_ID} \
